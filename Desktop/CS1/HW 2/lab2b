@@ -1,0 +1,84 @@
+import random
+
+def make_random_code():
+     letters=['R', 'G', 'B', 'Y', 'O','W']
+     l1=random.choice(letters)
+     l2=random.choice(letters)
+     l3=random.choice(letters)
+     l4=random.choice(letters)
+     return l1+l2+l3+l4
+     
+
+
+
+def count_exact_matches(s1,s2):
+     l1=list(s1)
+     l2=list(s2)
+     i=0
+     count=0
+     while i<4:
+          if l1[i]==l2[i]:
+               count+=1
+               
+          i+=1
+     return count
+          
+
+     
+     
+def count_letter_matches(s1,s2):
+     l1=list(s1)
+     l2=list(s2)
+     used0=False
+     used1=False
+     used2=False
+     used3=False
+     
+     i=0
+     count=0
+     while i<4:
+          if l1[i]==l2[0] and used0==False:
+               count+=1
+               used0=True
+          elif l1[i]==l2[1] and used1==False:
+               count+=1
+               used1=True
+          elif l1[i]==l2[2] and used2==False:
+               count+=1
+               used2=True
+          elif l1[i]==l2[3] and used3==False:
+               count+=1   
+               used3=True
+          
+               
+          i+=1
+     return count
+          
+        
+def compare_codes(code, guess):
+     blackPegs=count_exact_matches(code, guess)
+     whitePegs=count_letter_matches(code, guess)-count_exact_matches(code, guess)
+     dashes=4-blackPegs-whitePegs
+     return 'b'*blackPegs+'w'*whitePegs+'-'*dashes
+
+
+
+def run_game():
+     print('New game.')
+     
+     moves=0
+     secret=make_random_code()
+     while True:
+          guess=raw_input('Enter your guess: ')
+          result=compare_codes(secret,guess)
+          print(result)
+          moves+=1
+          if result=='bbbb':
+               print('Congratulations! You cracked the code in %g moves!' %moves)
+               break
+     
+          
+     
+run_game()   
+
+     
