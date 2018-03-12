@@ -1,0 +1,21 @@
+# These data correspond to the fold-change measurements
+# performed in Garcia and Phillips, PNAS 2011. Each 
+# row corresponds to a single data point. The 
+# 'repressor' column corresponds to the copy number of the
+# repressor in the cell, 'fold_change' is the measured
+# fold-change in gene expression relative to the constitutive
+# architecture, and 'operator' is the identity of the 
+# repressor binding site on the DNA.
+repressor,fold_change,operator
+2.2420e+01,7.9850e-01,O3
+5.9340e+01,6.5240e-01,O3
+1.2400e+02,6.2100e-01,O3
+2.5530e+02,4.7730e-01,O3
+2.2420e+01,1.7560e-01,O2
+5.9340e+01,4.5190e-02,O2
+1.2400e+02,2.1510e-02,O2
+2.5530e+02,1.2410e-02,O2
+2.2420e+01,3.8860e-02,O1
+5.9340e+01,8.9020e-03,O1
+1.2400e+02,4.7210e-03,O1
+2.2530e+02,2.7740e-03,O1
